@@ -1,0 +1,117 @@
+:root {
+    --main-bg: #f5f7fa;
+    --header-bg: #222;
+    --accent: #0078d7;
+    --text: #222;
+    --white: #fff;
+    --footer-bg: #222;
+}
+body {
+    background-color: #f0f8ff;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.lien button{
+    background-color: var(--accent);
+    color: darkblue;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.lien button:hover{
+    background-color: var(--footer-bg);
+    color: firebrick;
+    padding: 8px;
+}
+.lien button a{
+    text-decoration: none;
+    color: var(--main-bg);
+    text-decoration: none;
+    background-color: #f5f7fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: background 0.2s, color 0.2s;
+
+}
+.lien button a:hover{
+    text-decoration: dotted;
+    color: hotpink;
+}
+.balloon {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ff6f61;
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.balloon:before {
+    content: normal;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background-color: #333;
+    transform: translateX(-50%);
+}
+
+.balloon:nth-child(odd) {
+    background-color: #ff8c00;
+}
+
+.balloon:nth-child(even) {
+    background-color: #8a2be2;
+}
+
+.bouton {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ff0;
+    opacity: 0;
+    animation: confetti-fall 10s ease-in infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.celebration-text {
+    font-size: 3em;
+    color: #ff1493;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.celebration-text small {
+    font-size: 0.6em;
+    color: #ff4500;
+}
+
+.balloon-container {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+}

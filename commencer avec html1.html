@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commencer avec html</title>
+    <link rel="stylesheet" href="./css/commencer avec html1.css">
+</head>
+<body>
+
+    <div id="terminal"></div>
+
+    <script>
+        const terminal = document.getElementById("terminal");
+        const commands = [
+            "bienvenue dans l'univers du developpement web",
+            "le developpement est composé principalement du html,css et javascript",
+            "dans ce chapitre vous allez apprendre : ",
+            "_A creé votre première page web ",
+            "_ A connaitre le base du html...",
+            "les differente balise ...",
+            "techno-world,<< voir le monde sous un autre onglet >>",
+            "bonne apprentissage",
+            "Merci !...",
+        ];
+
+        function typeCommand(command, speed) {
+            return new Promise((resolve) => {
+                let index = 0;
+                const interval = setInterval(() => {
+                    terminal.textContent += command[index];
+                    index++;
+                    if (index === command.length) {
+                        clearInterval(interval);
+                        terminal.textContent += "\n";
+                        resolve();
+                    }
+                }, speed);
+            });
+        }
+
+        async function runCommands() {
+            for (let command of commands) {
+                await typeCommand("> " + command, 50);
+                if (command === "Bypassing firewall...") {
+                    createProgressBar();
+                    await simulateProgress();
+                }
+            }
+        }
+
+        function createProgressBar() {
+            const progressBar = document.createElement("div");
+            progressBar.className = "progress-bar";
+            const fill = document.createElement("div");
+            fill.className = "progress-bar-fill";
+
+            progressBar.appendChild(fill);
+            terminal.appendChild(progressBar);
+        }
+
+        function simulateProgress() {
+            return new Promise((resolve) => {
+                const fill = document.querySelector(".progress-bar-fill");
+                let width = 0;
+                const interval = setInterval(() => {
+                    width += 5;
+                    fill.style.width = width + "%";
+                    if (width >= 100) {
+                        clearInterval(interval);
+                        resolve();
+                    }
+                }, 100);
+            });
+        }
+
+        // Run the simulation
+        runCommands();
+
+    </script>
+     
+    <div>
+        <button>        <a href="html1.html">continuer</a>
+        </button>
+    </div>
+
+</body>
+</html>

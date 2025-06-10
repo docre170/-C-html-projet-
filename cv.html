@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="./css pour accueil/cv.css">
+</head>
+<body>
+    <div id="mydiv">
+        <div id="header"> &times; </div>
+        <textarea id="myInput" autofocus></textarea>
+    </div>
+
+    <script>
+        const str = "salut c'est credo kutanga, je suis un programmeur et fondateur de 'techno-world' ; un site qui vous permet d'apprendre la programmation; ainsi que l'informatique. j'étudie l'université protestante au Congo dans la faculté des sciences informatiques ";
+        let count = 0;
+
+        function myFunc() {
+            document.getElementById("myInput").value += str[count];
+            count++;
+
+            // Vibrer ou alerter à des indices spécifiques
+            if (count === 235 || count === 236) {
+                if ("vibrate" in navigator) {
+                    navigator.vibrate(500);
+                } else {
+                    alert("device successfully formatted!!");
+                }
+            }
+
+            // Conditions pour ajuster l'intervalle
+            if (count === 5 || count === 24 || count === 37 || count === 66 || count === 166) {
+                clearInterval(x);
+                x = setInterval(myFunc, 600);
+            } else if (count === 95 || count === 121 || count === 236 || count === 295) {
+                clearInterval(x);
+                x = setInterval(myFunc, 1000);
+            } else if ((count > 4 && count < 20) || (count > 35 && count < 50) ||
+                       (count > 122 && count < 135) || (count > 150 && count < 166) ||
+                       (count > 178 && count < 188) || (count > 195 && count < 201) ||
+                       (count > 206 && count < 214) || (count > 240 && count < 250) ||
+                       (count > 260 && count < 271) || (count > 280 && count < 282) ||
+                       (count > 302 && count < 315)) {
+                clearInterval(x);
+                x = setInterval(myFunc, 75);
+            } else {
+                clearInterval(x);
+                x = setInterval(myFunc, 150);
+            }
+
+            // Arrête l'intervalle si tous les caractères ont été affichés
+            if (count >= str.length) {
+                clearInterval(x);
+            }
+        }
+
+        let x = setInterval(myFunc, 150);
+    </script>
+</body>
+</html>

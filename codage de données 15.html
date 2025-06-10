@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Codage de données 15</title>
+    <link rel="stylesheet" href="./css/codage de données 15.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;">
+            <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+                alt="logo" title="Techno-World" style="width:180px;max-width:90vw;height:auto;">
+            <h1 style="margin-left:16px;">Techno-World</h1>
+        </div>
+        <nav class="nav">
+            <a href="../index.html" class="debut">Accueil</a>
+            <a href="./cours.html" class="debut">Cours</a>
+            <a href="../developpement web/généralité_frontend.html" class="debut">Développement web</a>
+            <a href="./codage de données 1.html" class="debut">Codage de données</a>
+            <a href="../fondement du web/technologie pour tous acc2.html" class="debut">Technologie fondamentale</a>
+    </header>
+    <main>
+        <h1>
+            Module 3 : Codage et sécurité des données
+        </h1>
+        <div>
+        <h2>
+            C’est quoi la sécurité des données?
+        </h2>
+        <p>
+            Quand on envoie ou garde des informations (comme un mot de passe, un message ou un numéro de carte), il faut les protéger pour que personne d’autre ne les lise ou les vole.<br>
+            Exemple : C’est comme écrire un secret en code pour que seul ton ami puisse le comprendre.
+        </p>
+        </div>
+        <div>
+            <h2> différence entre codage et cryptage</h2>
+            <p>
+                <ul>
+                    <li> - Codage = transformer une donnée pour qu’elle soit plus facile à transporter ou stocker.</li>
+                    <li>
+                        - Cryptage (ou chiffrement) = transformer une donnée pour la cacher.
+                    </li>
+                </ul>             
+            </p>
+        </div>
+        <div>
+            <h2> 2. Chiffrement (cryptage)</h2>
+            <p>
+                C’est une technique pour cacher des données en les mélangeant.<br>
+               Exemple simple : 
+                <ul>
+                    <li>- Message original : CHAT</li>
+                    <li>
+                        - Code secret : décaler chaque lettre de 3 :
+                        C → F, H → K, A → D, T → W.<dl>
+                            - Résultat : FKDW
+                        </dl>
+                    </li>
+                    <li>
+                        - Seule la personne qui connaît la clé (le nombre 3 peut retrouver le message.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div>
+            <h2>3. Quelques méthodes de chiffrement : </h2>
+            <h3>
+                a. Chiffrement symétrique :
+            </h3>
+            <p>
+                - Même clé pour coder et décoder.<br>
+- Exemple : Clé = 1234 → coder et lire avec la même.
+            </p>
+            <h3>
+                b. *Chiffrement asymétrique* :
+            </h3>
+            <p>
+                Deux clés différentes : clé publique (pour coder) et clé privée (pour décoder).
+                <br>
+- Exemple : Tu laisses ta clé publique sur Internet, mais seule ta clé privée peut ouvrir le message.
+            </p>
+        </div>
+        <div>
+            <h2>
+                4. Autres moyens de protection :
+            </h2>
+            <p>
+                - Hachage : transforme un mot (ex: mot de passe) en une longue suite de lettres/chiffres (ex: `5F4DCC...`), irréversible.<br>
+- Mot de passe fort : mélange lettres, chiffres, symboles.<br>
+- Pare-feu, antivirus : protègent ton ordinateur contre les voleurs de données.
+            </p>
+        </div>
+        <div>
+           <h2>
+               5. Pourquoi coder les données ?
+           </h2> 
+           <p>
+1. Pour empêcher les pirates de lire les messages.<br>
+2.  Pour vérifier qu’un message n’a pas été modifié. <br>
+3.  Pour prouver qui a envoyé le message (authenticité).
+</p>
+        </div>
+         <section>
+            <button> <a href="./fin du module codage de donnée.html">page suivante</a></button>
+            <button> 
+                <a href="../accueil/boutique/boutique.html">télécharger le pdf</a>
+            </button>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><strong>Liens utiles :</strong></li>
+                <li><a href="./accueil/faq.html">FAQ</a></li>
+                <li><a href="./accueil/a propos .html">À propos</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>&copy; Techno-world 2024-2025 - Tous droits réservés.</li>
+            <li><a href="mailto:credokutanga170@gmail.com">Contactez-nous</a></li>
+            <li><a href="tel:+243901058311">Appel</a></li>
+        </ul>
+        <div class="reseau">
+            <ul>
+                <li>
+                    <a href="https://wa.me/243901058311" target="_blank" title="WhatsApp" class="reseau-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/" target="_blank" title="GitHub" class="reseau-link">
+                        <i class="fab fa-github"></i> Github
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.sololearn.com/profile/33715804/?ref=app">
+                    <i class="fab fa-sololearn"></i>sololearn</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../accueil/javascript pour accueil/connexion.js"></script>
+</body>
+</html>

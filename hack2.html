@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUB</title>
+    <link rel="stylesheet" href="./css pour accueil/hack2.css">
+</head>
+
+<body>
+
+    <div id="terminal"></div>
+
+    <script>
+        const terminal = document.getElementById("terminal");
+        const commands = [
+            "Techno-world est un bon site...",
+            "Suivez-nous...",
+            "Nous vous aiderons en retour...",
+            "Abonnez-vous...",
+            "Suivez-nous...",
+            "Vous ne serez pas déçu...",
+            "Techno-world est là pour vous...",
+            "...",
+            "Merci !",
+        ];
+
+        function typeCommand(command, speed) {
+            return new Promise((resolve) => {
+                let index = 0;
+                const interval = setInterval(() => {
+                    terminal.textContent += command[index];
+                    index++;
+                    if (index === command.length) {
+                        clearInterval(interval);
+                        terminal.textContent += "\n";
+                        resolve();
+                    }
+                }, speed);
+            });
+        }
+
+        async function runCommands() {
+            for (let command of commands) {
+                await typeCommand("> " + command, 50);
+                if (command === "Bypassing firewall...") {
+                    createProgressBar();
+                    await simulateProgress();
+                }
+            }
+        }
+
+        function createProgressBar() {
+            const progressBar = document.createElement("div");
+            progressBar.className = "progress-bar";
+            const fill = document.createElement("div");
+            fill.className = "progress-bar-fill";
+
+            progressBar.appendChild(fill);
+            terminal.appendChild(progressBar);
+        }
+
+        function simulateProgress() {
+            return new Promise((resolve) => {
+                const fill = document.querySelector(".progress-bar-fill");
+                let width = 0;
+                const interval = setInterval(() => {
+                    width += 5;
+                    fill.style.width = width + "%";
+                    if (width >= 100) {
+                        clearInterval(interval);
+                        resolve();
+                    }
+                }, 100);
+            });
+        }
+
+        runCommands();
+
+    </script>
+
+    <div>
+        <a href="C:\html projet\developpement web\html1.html">Pour le Front-end pour débutants (développement
+            web)</a>;
+        <a href="../codage de donnes/codage de données 1.html">Pour le codage de données</a>;
+        <a href="">Pour les bases de l'informatique</a>;
+        <a href="">Pour Python</a>;
+        <a href="">Pour C</a>;
+        <a href="../tecnologie web fondamentale/technologie pour tous acc2.html">Fondements web</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(125deg, #D3CCE3, #E9E4F0);
+}
+header {
+    background: linear-gradient(to bottom, #1A2980, #26D0CE);
+    display: flex;
+    width: 100%;
+    padding: 40px 0;
+    margin-left: 0.3px;
+    margin-top: 0.3px;
+    margin-bottom: 20px;
+    margin-right: 0.3px;
+}
+
+header h1 {
+    margin-left: 400px;
+}
+
+header img {
+    width: 150px;
+    margin-left: 10px;
+}
+main {
+    margin: 20px;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    background: linear-gradient(to right, #3A7BD5, #00D2FF);
+    color: white;
+}
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    text-shadow: 1px 2px 3px black;
+    
+}
+
+#logo{
+    display: row;
+    text-align: left;
+}
+
+h2,h3,h4,h5{
+    text-decoration: underline;
+}
+.compte .connexion{
+    margin: 20px;
+}
+.pied ul li{
+    list-style: none;
+}
+.pied ul li a {
+    text-decoration: none;
+    color: black;
+}
+.pied ul li a:hover{
+    color:#1A2980 ;
+}
+.liens button{
+    color: black;
+    background-color:#26D0CE ;
+    padding: 5px;
+}
+.liens button:hover{
+    color:white;
+    background-color: #D3CCE3;
+    padding: 10px;
+}
+.liens a{
+    color: #333;
+    text-decoration: none;
+}
+.liens a:hover{
+    color: black;
+    text-decoration: line-through;
+}
+ a {
+    text-decoration: none;
+    color: lavender transparent;
+}
+a:hover{
+    text-decoration: overline;
+    color:#D3CCE3 ;
+} */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(125deg, #D3CCE3, #E9E4F0);
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(to bottom, #1A2980, #26D0CE);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0 20px 0;
+    margin: 0 0 20px 0;
+}
+
+header img {
+    width: 110px;
+    margin: 0 16px 0 0;
+    max-width: 30vw;
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+main {
+    margin: 0 auto;
+    padding: 20px 10vw;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+    text-shadow: 1px 2px 3px #222;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    text-decoration: underline;
+}
+
+.compte .connexion,
+.cours,
+.contact {
+    margin: 20px 0;
+}
+
+.pied ul li {
+    list-style: none;
+}
+
+.pied ul li a {
+    text-decoration: none;
+    color: #222;
+}
+
+.pied ul li a:hover {
+    color: #1A2980;
+}
+
+.liens button {
+    color: #222;
+    background-color: #26D0CE;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    margin: 2px 2px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.liens button:hover {
+    color: #fff;
+    background-color: #1A2980;
+}
+
+.liens a {
+    color: #222;
+    text-decoration: none;
+}
+
+.liens a:hover {
+    color: #1A2980;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: #1A2980;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #26D0CE;
+}
+
+footer {
+    text-align: center;
+    background: linear-gradient(to right, #3A7BD5, #00D2FF);
+    color: white;
+    padding: 24px 0 12px 0;
+    margin-top: 40px;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    flex-wrap: wrap;
+}
+
+footer nav ul li {
+    font-size: 1em;
+}
+
+.reseau ul {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.reseau-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.reseau-link:hover {
+    color: #222;
+}
+
+.mailto {
+    margin-top: 10px;
+}
+
+.mailto a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.mailto a:hover {
+    color: #1A2980;
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 20px 4vw;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        padding: 18px 0 10px 0;
+    }
+
+    header img {
+        margin: 0 0 10px 0;
+        width: 80px;
+    }
+
+    main {
+        padding: 10px 2vw;
+    }
+
+    .liens button {
+        width: 100%;
+        margin: 6px 0;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        padding: 4px 1vw;
+    }
+
+    header h1 {
+        font-size: 1em;
+    }
+
+    .liens button {
+        font-size: 0.95em;
+    }
+}

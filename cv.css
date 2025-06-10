@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+
+textarea {
+    color: green;
+    background-color: black;
+    outline: none;
+    margin-left: 25px;
+    font-size: 15px;
+    height: 300px;
+    width: 250px;
+    text-align: center;
+}
+header {
+    width: 255px;
+    height: 25px;
+    background-color: darkgrey;
+    margin-left: 25px;
+    margin-top: 30px;
+    border: 1px solid black;
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    /* Aligne le texte à droite */
+}

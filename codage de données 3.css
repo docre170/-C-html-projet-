@@ -1,0 +1,354 @@
+/* Menu hamburger simple */
+:root {
+    --main-bg: #f5f7fa;
+    --header-bg: #222;
+    --accent: #0078d7;
+    --text: #222;
+    --white: #fff;
+    --footer-bg: #222;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--main-bg);
+    color: var(--text);
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--white);
+    padding: 20px 0 10px 0;
+    position: relative;
+}
+/* Ajoutez ceci dans codage de données 3.css */
+header img {
+    max-width: 100%;
+    height: auto;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.nav {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    background-color: #0078d7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: var(--accent);
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: var(--white);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    padding: 30px 24px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--accent);
+}
+
+span {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+em {
+    color: #555;
+}
+
+ol,
+ul,
+dl {
+    margin-left: 20px;
+    list-style: none;
+}
+
+button {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    margin: 8px 6px 8px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+button:hover {
+    background: #005fa3;
+}
+
+footer {
+    background: var(--footer-bg);
+    color: var(--white);
+    padding: 24px 0 12px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+footer nav ul li {
+    font-size: 1em;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+pre {
+    background-color: #0078d7;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 16px 4vw;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    section {
+        margin-bottom: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--header-bg);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 18px 0;
+        z-index: 100;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: block;
+        position: absolute;
+        right: 24px;
+        top: 22px;
+    }
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    main {
+        margin: 18px 0;
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#menu-toggle {
+    font-size: 2em;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    header img {
+        width: 120px;
+    }
+        header>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    
+        header h1 {
+            margin-left: 16px;
+        }
+                header>div {
+                flex-direction: column;
+                gap: 8px;
+            }
+    
+            header h1 {
+                margin-left: 0;
+                font-size: 1.1em;
+            }
+        
+}
+/* Ajoutez ceci dans codage de données 3.css */
+@media (max-width: 700px) {
+    .nav.mobile a {
+        display: block;
+        margin: 8px 0;
+        background: var(--accent);
+        color: #fff;
+    }
+
+    .nav.mobile {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background: var(--header-bg);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 10px 0;
+    }
+
+    #menu-toggle {
+        display: inline-block !important;
+        position: absolute;
+        right: 24px;
+        top: 22px;
+        color: #fff;
+        font-size: 2em;
+        cursor: pointer;
+    }
+}
+@media (max-width: 500px) {
+    button {
+        width: 100%;
+        margin: 8px 0;
+        font-size: 1em;
+    }
+
+    main {
+        padding: 8px 2vw;
+    }
+}

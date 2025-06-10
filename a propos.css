@@ -1,0 +1,289 @@
+/* Initialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6a11cb 100%);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main */
+main {
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #1e3c72;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-shadow: 3px 2px 4px black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-decoration: underline;
+    text-indent: 50px;
+    margin-bottom: 5px;
+}
+
+p {
+    text-indent: 12px;
+    margin-bottom: 10px;
+}
+
+span {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.introduction,
+.histoire,
+.mission {
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.reste {
+    margin-bottom: 20px;
+}
+
+ul {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #2a5298;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline dotted;
+}
+
+.lien button {
+    padding: 12px;
+    margin: 10px 5px;
+    background-color: #f5af19;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #222;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+.lien button:hover {
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+.lien a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.lien a:hover {
+    text-decoration: underline dashed;
+    color: #fff;
+}
+
+.nav {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    background-color: #b3c6e7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav a:hover {
+    background-color: #fff;
+    color: #1e3c72;
+}
+
+.reseau ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+
+.reseau-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.reseau-link:hover {
+    color: #ffd700;
+}
+
+@media screen and (max-width: 600px) {
+    .intro {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    main {
+        padding: 5px;
+    }
+}
+/* ...existing code... */
+
+@media screen and (max-width: 900px) {
+    main {
+        max-width: 98vw;
+        padding: 10px 2vw;
+    }
+
+    header {
+        padding: 20px 0 10px 0;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    #logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav a {
+        display: inline-block;
+        margin: 5px 2px;
+        font-size: 1em;
+        padding: 7px 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        padding: 5px 1vw;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 1.1em;
+    }
+
+    .nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav a {
+        display: block;
+        margin: 6px auto;
+        width: 90%;
+        font-size: 1em;
+    }
+
+    section,
+    .introduction,
+    .histoire,
+    .mission,
+    .reste {
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        margin-left: 18px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    .reseau ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ...existing code... */

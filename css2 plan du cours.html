@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan du cours CSS | Techno-World</title>
+    <style>
+        :root {
+            --primary-color: #4facfe;
+            --secondary-color: #00f2fe;
+            --accent-color: #ffa815;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Style de base pour améliorer l'apparence */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        nav button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .footer-links {
+            margin: 1rem 0;
+        }
+        .footer-links a {
+            color: #4da6ff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Logo Techno-World">
+            <h1>Techno-World</h1>
+        </div>
+        <div class="navigation">
+            <nav>
+                <button><a href="">Accueil</a></button>
+                <button><a href="">Cours</a></button>
+                <button><a href="">Aide</a></button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="course-plan">
+            <h1>Plan du cours</h1>
+            <p>Voici comment se subdivise notre cours sur le CSS pour débutant :</p>
+            
+            <ol>
+                <li>Module 1 : Introduction au CSS</li>
+                <li>Module 2 : Les bases du CSS</li>
+                <li>Module 3 : CSS – Mise en forme
+                    <ul>
+                        <li>Sélecteurs et propriétés</li>
+                        <li>Couleurs, polices, arrière-plan</li>
+                        <li>Marges, paddings, bordures</li>
+                        <li>Flexbox et Grid</li>
+                        <li>Responsive Design (Media queries)</li>
+                    </ul>
+                </li>
+                <li>Module 4 : Projet pratique</li>
+            </ol>
+
+            <div class="navigation-buttons">
+                <p>Bonne apprentissage 👌🏾</p>
+                <button><a href="">Retour</a></button>
+                <button><a href="">Page suivante</a></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 Techno-World - Tous droits réservés</p>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Contact</a>
+                <a href="#">Politique de confidentialité</a>
+            </div>
+            <p>Suivez-nous sur les réseaux sociaux : [icônes]</p>
+        </div>
+    </footer>
+</body>
+</html>

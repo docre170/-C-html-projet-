@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox vs Grid | Techno-World</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #2b2d42;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: #f5f7fa;
+        }
+         .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .comparison-table thead tr {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .comparison-table tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .comparison-table tbody tr:hover {
+            background-color: #f1f5fe;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2rem;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Menu Hamburger */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation */
+        nav {
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 1.2rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 4px solid var(--accent);
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f2f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            color: #e83e8c;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary);
+                padding: 1rem 2rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+            }
+
+            nav.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+       
+
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Techno-World">
+                <h1>Techno-World</h1>
+            </div>
+            
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Cours</a></li>
+                    <li><a href="#">Tutoriels</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <p>
+                Imagine que tu veux ranger tes jouets dans ta chambre.<br>
+                En CSS, Flexbox et Grid sont comme deux super méthodes pour organiser tes boîtes, tes peluches et tes voitures sur une étagère ou un tapis.
+            </p>
+            
+            <div>
+                <h1>Flexbox</h1>
+                <p>
+                    Ranger en ligne ou en colonne (comme une file d'attente)<br>
+                    Flexbox, c'est comme quand tu mets tes jouets en ligne droite (comme des dominos) ou en colonne (comme une pile de livres).
+                </p>
+                <p>Exemple avec des bonbons :</p>
+                <pre>.boite-bonbons {
+  display: flex;      /* On active Flexbox */
+  flex-direction: row; /* On range les bonbons en ligne */
+  gap: 10px;          /* On met un petit espace entre eux */
+}</pre>
+                <p>
+                    <strong>Résultat :</strong> 1 2 3 (ils sont tous alignés côte à côte !)
+                </p>
+                <p>
+                    Tu peux aussi :<br>
+                    <code>flex-direction: column;</code> → Les bonbons s'empilent (1<br>2<br>3)<br>
+                    <code>justify-content: center;</code> → Les bonbons vont au milieu<br>
+                    <code>align-items: center;</code> → Ils se mettent à la même hauteur
+                </p>
+            </div>
+            
+            <div>
+                <h1>Grid</h1>
+                <p>
+                    Ranger comme un jeu de Tetris (grille carrée)<br>
+                    Grid, c'est comme un tableau avec des cases où tu peux placer tes jouets où tu veux (comme un puzzle).
+                </p>
+                <pre>.tapis-lego {
+  display: grid;                   /* On active Grid */
+  grid-template-columns: 1fr 1fr;  /* 2 colonnes de même taille */
+  gap: 15px;                      /* Espace entre les Lego */
+}</pre>
+                <p>
+                    <strong>Résultat :</strong><br>
+                    🟥 🟦<br>
+                    🟨 🟩
+                </p>
+                <p>
+                    Tu peux aussi :<br>
+                    <code>grid-template-rows: 100px 200px;</code> → La 1ère ligne fait 100px, la 2ème 200px<br>
+                    <code>grid-column: span 2;</code> → Un Lego prend 2 cases (comme une grosse pièce)
+                </p>
+                <p>
+                    <strong>À quoi ça sert ?</strong><br>
+                    → Faire des galeries photos, des tableaux, des sites avec des zones bien organisées.
+                </p>
+            </div>
+            
+            <div>
+                <h2>Flexbox vs Grid : Lequel choisir ?</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th></th>
+                        <th>Flexbox</th>
+                        <th>Grid</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Utilisation</strong></td>
+                        <td>Pour aligner en <strong>1 ligne ou 1 colonne</strong></td>
+                        <td>Pour faire des <strong>grilles (lignes + colonnes)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Idéal pour</strong></td>
+                        <td>Menus, petits groupes d'éléments</td>
+                        <td>Mises en page complexes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complexité</strong></td>
+                        <td>Plus simple pour les petits arrangements</td>
+                        <td>Plus puissant pour les grands designs</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Techno-World - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Menu hamburger functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

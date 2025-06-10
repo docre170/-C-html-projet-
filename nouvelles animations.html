@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80 Followers Celebration</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            overflow: auto;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ff6f61;
+            transition: transform 1s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .balloon:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            height: 50px;
+            background-color: #333;
+            transform: translateX(-50%);
+        }
+
+        .balloon:nth-child(odd) {
+            background-color: #ff8c00;
+        }
+
+        .balloon:nth-child(even) {
+            background-color: #8a2be2;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ff0;
+            opacity: 0;
+            animation: confetti-fall 3s ease-in infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .celebration-text {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            color: #ff1493;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .celebration-text small {
+            font-size: 0.6em;
+            color: #ff4500;
+        }
+
+        .balloon-container {
+            position: absolute;
+            bottom: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="celebration-text">
+        🎉 félicitations vous avez fini le module! 🎉
+        <br>
+        <small>💯Merci pour votre confiance !💢</small>
+    </div>
+
+    <div class="balloon-container">
+        <!-- Balloons will be generated dynamically -->
+    </div>
+
+    <script>
+        // Function to generate balloons
+        function generateBalloons() {
+            const balloonContainer = document.querySelector('.balloon-container');
+            for (let i = 0; i < 10; i++) {
+                let balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.bottom = -Math.random() * 150 - 50 + 'px';
+                balloon.style.animation = `float ${Math.random() * 3 + 3}s ease-in-out infinite`;
+
+                // Create animation for each balloon
+                balloon.style.animationDuration = Math.random() * 3 + 3 + 's';
+                balloon.style.animationDelay = Math.random() * 2 + 's';
+                balloonContainer.appendChild(balloon);
+            }
+        }
+
+        // Function to generate confetti
+        function generateConfetti() {
+            for (let i = 0; i < 200; i++) {
+                let confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 2 + 2 + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+
+        // Call the functions on page load
+        window.onload = function() {
+            generateBalloons();
+            generateConfetti();
+        }
+    </script>
+
+</body>
+</html>

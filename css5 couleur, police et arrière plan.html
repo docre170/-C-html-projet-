@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Couleurs, police et fond | Techno-world</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 🌐 Style global 2025 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #fce4ec);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 28px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    section {
+      background-color: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+    }
+
+    section h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #0d47a1;
+    }
+
+    pre {
+      background-color: #f1f1f1;
+      padding: 1rem;
+      border-left: 4px solid #0d47a1;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+      margin: 1rem 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .boite {
+      background-color: pink;
+      color: white;
+      font-family: "Comic Sans MS";
+      font-size: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    footer {
+      background-color: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1565c0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 0 10px;
+        padding: 1rem;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+      
+      main {
+        padding: 1rem;
+      }
+      
+      section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://via.placeholder.com/40" alt="logo">
+    </div>
+    <h1>Techno-world</h1>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="nav">
+      <a href="#">Accueil</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>1. Les couleurs en CSS</h1>
+      <p>
+        Tu sais quand tu dessines avec des feutres ou des crayons ? Eh bien, en CSS, tu peux aussi colorier ton site web ! Voici comment on dit à une page de changer de couleur :
+      </p>
+      <pre>
+color: red;         /* La couleur du texte devient rouge */
+background-color: yellow;  /* L'arrière de la boîte devient jaune */
+      </pre>
+      <p>
+        Tu peux écrire :
+        <br>des couleurs par leur nom : red, blue, green, orange, etc.
+        <br>des codes spéciaux comme #ff0000 (c'est rouge en langage magique de l'ordinateur)
+      </p>
+    </section>
+
+    <section>
+      <h1>2. Les polices (ou « fonts »)</h1>
+      <p>
+        Tu as sûrement déjà vu des lettres rigolotes, sérieuses, ou élégantes ?
+        En CSS, on peut choisir le style des lettres qu'on utilise pour écrire :
+      </p>
+      <pre>
+font-family: "Comic Sans MS";   /* Police marrante */
+font-family: "Times New Roman"; /* Police sérieuse */
+font-family: "Arial";           /* Police simple et moderne */
+      </pre>
+      <p>Tu peux aussi changer :</p>
+      <pre>
+font-size: 24px;  /* 24 pixels, c'est assez grand */
+      </pre>
+      <p>Et :</p>
+      <pre>
+font-weight: bold;   /* Gras */
+font-style: italic;  /* Penchées */
+      </pre>
+    </section>
+
+    <section>
+      <h1>3. L'arrière-plan (background)</h1>
+      <p>
+        C'est comme si tu dessinais un mur derrière le texte. Tu peux :
+        <br>mettre une couleur :
+        <br>background-color: lightblue;
+        <br>ou même mettre une image :
+        <br>background-image: url("le chemin de ton image.jpg");
+        <br>Et tu peux dire si l'image se répète ou reste en place :
+      </p>
+      <pre>
+background-repeat: no-repeat;
+background-size: cover;  /* L'image remplit tout l'écran */
+      </pre>
+      <p>exemple :</p>
+      &lt;div class="boite" &gt;
+     &lt;p &gt;   Coucou toi ! &lt;p &gt;
+      </div>
+      <pre>
+.boite {
+  background-color: pink;
+  color: white;
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Techno-world. Tous droits réservés.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

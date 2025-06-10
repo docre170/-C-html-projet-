@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: white;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #555;
+}
+
+ol,
+ul {
+    margin-left: 20px;
+}
+
+strong {
+    color: #d9534f;
+    /* Couleur rouge pour le texte fort */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    /* Couleur verte */
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #4cae4c;
+    padding:  12px 14px;
+    /* Couleur verte plus foncée au survol */
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dff0d8;
+    /* Couleur de fond verte claire */
+    border: 1px solid #d6e9c6;
+    /* Bordure verte */
+    color: #3c763d;
+    /* Couleur du texte verte foncée */
+}
+.button a{
+    text-decoration: none;
+}
+.button a:hover{
+    text-decoration: yellowgreen underline;
+}

@@ -1,0 +1,80 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #e0f7fa, #80deea);
+}
+header{
+    background-color: #0ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+header ul{
+    list-style: none;
+    margin-bottom: 5px;
+}
+header a {
+    text-decoration: none;
+    margin: 10px;
+}
+header a:hover{
+    color: darkgrey;
+    text-decoration: springgreen;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main{
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+main:hover{
+    transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(196, 113, 237, 0.4);
+}
+h1{
+    text-align: center;
+}
+h2{
+    margin: 5px;
+}
+p{
+    text-indent: 12px;
+}
+.intro{
+    margin: 20px 0;
+
+}
+pre{
+    background-color: #4cae4c;
+}
+footer{
+    background-color: #0ff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    /* font-size: 1.2em; */
+}
+footer li{
+    list-style: none;
+}
+footer a {
+    text-decoration: none;
+}
+.btn{
+    background: linear-gradient(45deg, #12c2e9, #c471ed);
+    padding: 12px 14px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn:hover{
+    transform: translateX(-3px);
+    box-shadow: 0 10px 20px rgba(196, 113, 237, 0.4);
+}

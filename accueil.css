@@ -1,0 +1,512 @@
+body {
+    font-family: Arial, sans-serif,'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+button{
+    border-radius: 300px;
+    background-color: lavender;
+    color: red;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover{
+    background-color: #0056b3;
+}
+.bouton{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    text-decoration: underline solid;
+    text-shadow: 3px 2px 4px black;
+}
+p{
+    text-indent: 12px;
+}
+.liens a {
+    color: darkturquoise;
+    padding: 12px;
+    text-decoration: none;
+}
+.liens a:hover{
+    padding: 15px;
+    text-decoration: dotted;
+    color: dodgerblue;
+}
+.mailto a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+.mailto a:hover{
+    text-decoration: line-through;
+    color: darkturquoise;
+}
+/* Style moderne pour la section Codage, en gardant le background du body */
+#Codage {
+    background: #fff;
+    padding: 32px 28px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Codage:hover {
+    box-shadow: 0 12px 32px rgba(53, 66, 74, 0.20);
+    transform: translateY(-4px) scale(1.01);
+}
+
+#Codage h2 {
+    color: #35424a;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #b0b0b0;
+}
+
+#Codage img {
+    display: block;
+    margin: 0 auto 22px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #b0b0b0;
+}
+
+#Codage p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 12px;
+    text-indent: 0;
+}
+
+#Codage button {
+    background-color: #35424a;
+    color: #fff;
+    border-radius: 25px;
+    padding: 12px 32px;
+    border: none;
+    margin-top: 14px;
+    font-size: 1.08rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#Codage button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#Codage button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+#Codage button a:hover {
+    text-decoration: underline;
+}
+/* cool */
+#tech {
+    background: #fff;
+    padding: 32px 28px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tech:hover {
+    box-shadow: 0 12px 32px rgba(53, 66, 74, 0.20);
+    transform: translateY(-4px) scale(1.01);
+}
+
+#tech h2 {
+    color: #35424a;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #b0b0b0;
+}
+
+#tech img {
+    display: block;
+    margin: 0 auto 22px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #b0b0b0;
+}
+
+#tech p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 12px;
+    text-indent: 0;
+}
+
+#tech button {
+    background-color: #35424a;
+    color: #fff;
+    border-radius: 25px;
+    padding: 12px 32px;
+    border: none;
+    margin-top: 14px;
+    font-size: 1.08rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#tech button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#tech button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/*  */
+#python-dev {
+    background: #fff;
+    padding: 32px 28px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#python-dev:hover {
+    box-shadow: 0 12px 32px rgba(53, 66, 74, 0.20);
+    transform: translateY(-4px) scale(1.01);
+}
+
+#python-dev h2 {
+    color: #35424a;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #b0b0b0;
+}
+
+#python-dev img {
+    display: block;
+    margin: 0 auto 22px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #b0b0b0;
+}
+
+#python-dev p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 12px;
+    text-indent: 0;
+}
+
+#python-dev button {
+    background-color: #35424a;
+    color: #fff;
+    border-radius: 25px;
+    padding: 12px 32px;
+    border: none;
+    margin-top: 14px;
+    font-size: 1.08rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#python-dev button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#python-dev button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/*  */
+#c-lang {
+    background: #fff;
+    padding: 32px 28px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#c-lang:hover {
+    box-shadow: 0 12px 32px rgba(53, 66, 74, 0.20);
+    transform: translateY(-4px) scale(1.01);
+}
+
+#c-lang h2 {
+    color: #35424a;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #b0b0b0;
+}
+
+#c-lang img {
+    display: block;
+    margin: 0 auto 22px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #b0b0b0;
+}
+
+#c-lang p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 12px;
+    text-indent: 0;
+}
+
+#c-lang button {
+    background-color: #35424a;
+    color: #fff;
+    border-radius: 25px;
+    padding: 12px 32px;
+    border: none;
+    margin-top: 14px;
+    font-size: 1.08rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#c-lang button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#c-lang button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/*  */
+ #fondement {
+    background: #fff;
+    padding: 32px 28px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fondement:hover {
+    box-shadow: 0 12px 32px rgba(53, 66, 74, 0.20);
+    transform: translateY(-4px) scale(1.01);
+}
+
+#fondement h2 {
+    color: #35424a;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #b0b0b0;
+}
+
+#fondement img {
+    display: block;
+    margin: 0 auto 22px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #b0b0b0;
+}
+
+#fondement p {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 12px;
+    text-indent: 0;
+}
+
+#fondement button {
+    background-color: #35424a;
+    color: #fff;
+    border-radius: 25px;
+    padding: 12px 32px;
+    border: none;
+    margin-top: 14px;
+    font-size: 1.08rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(53, 66, 74, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#fondement button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#fondement button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/*  */
+.bouton {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 200px;	
+    animation: bounce 3s alternate infinite ;
+}
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+/* Responsive Design */
+@media (max-width: 900px) {
+
+    #Codage,
+    #tech,
+    #python-dev,
+    #c-lang,
+    #fondement {
+        max-width: 95%;
+        padding: 18px 8px;
+    }
+
+    .bouton {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header,
+    footer {
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 8px;
+    }
+
+    section {
+        padding: 10px;
+        margin-bottom: 14px;
+    }
+
+    #Codage img,
+    #tech img,
+    #python-dev img,
+    #c-lang img,
+    #fondement img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    #Codage h2,
+    #tech h2,
+    #python-dev h2,
+    #c-lang h2,
+    #fondement h2 {
+        font-size: 1.2rem;
+    }
+
+    button,
+    #Codage button,
+    #tech button,
+    #python-dev button,
+    #c-lang button,
+    #fondement button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .bouton {
+        padding-left: 0;
+    }
+}

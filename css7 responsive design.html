@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design | Techno-world</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #2b2d42;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Menu Hamburger */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation */
+        nav {
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 1.2rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 4px solid var(--accent);
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f2f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            color: #e83e8c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--secondary);
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+                transition: right 0.3s ease;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 1.5rem;
+            }
+            
+            pre {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Techno-World">
+                <h1>Techno-World</h1>
+            </div>
+            
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Cours</a></li>
+                    <li><a href="#">Tutoriels</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1>Responsive Design</h1>
+            <p>
+                Le Responsive Design (design adaptatif) permet à votre site web de s'adapter à toutes les tailles d'écran (smartphone, tablette, ordinateur).  
+            </p>
+            <p>
+                Les Media Queries sont des règles CSS qui disent :  
+                "Si l'écran fait telle taille, alors applique ce style !" 
+            </p>
+            
+            <div>
+                <h2>1. Pourquoi c'est important ?</h2>
+                <p>
+                    - Sur mobile, un site mal adapté oblige l'utilisateur à zoomer/dézoomer.<br>
+                    - Sur grand écran, le contenu peut paraître trop étiré.<br>
+                    - Google favorise les sites mobile-friendly dans ses résultats.
+                </p>
+            </div>
+            
+            <div>
+                <h2>2. Comment ça marche ?</h2>
+                <p>Exemple 1 : Changer la couleur sur mobile</p>
+                <pre><code>/* Style par défaut (pour tous les écrans) */
+body {
+  background-color: lightblue;
+}
+
+/* Si l'écran fait moins de 600px (smartphone) */
+@media (max-width: 600px) {
+  body {
+    background-color: pink;
+  }
+}</code></pre>
+                <p>
+                    <strong>Résultat:</strong><br>
+                    - Sur ordinateur → Fond bleu clair<br>  
+                    - Sur téléphone → Fond rose
+                </p>
+            </div>
+            
+            <div>
+                <p>Exemple 2 : Cacher un élément sur mobile</p>
+                <pre><code>/* Par défaut, le menu est visible */
+.menu {
+  display: block;
+}
+
+/* Sur mobile, on le cache */
+@media (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+}</code></pre>
+                <p>
+                    <strong>Résultat :</strong><br>
+                    - Sur mobile → Le menu disparaît.
+                </p>
+            </div>
+            
+            <div>
+                <p>Exemple 3 : Changer la taille du texte</p>
+                <pre><code>/* Taille normale sur ordinateur */
+h1 {
+  font-size: 32px;
+}
+
+/* Taille réduite sur mobile */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+}</code></pre>
+                <p>
+                    <strong>Résultat :</strong><br>
+                    - Sur mobile → Le titre est plus petit.
+                </p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>3. Points de rupture courants (Breakpoints)</h2>
+            <p>On utilise souvent ces tailles d'écran :</p>
+            
+            <table>
+                <tr>
+                    <th>Taille (max-width)</th>
+                    <th>Type d'appareil</th>
+                </tr>
+                <tr>
+                    <td>600px</td>
+                    <td>Smartphones</td>
+                </tr>
+                <tr>
+                    <td>768px</td>
+                    <td>Tablettes</td>
+                </tr>
+                <tr>
+                    <td>992px</td>
+                    <td>Petits ordinateurs</td>
+                </tr>
+                <tr>
+                    <td>1200px</td>
+                    <td>Grands écrans</td>
+                </tr>
+            </table>
+            
+            <div>
+                <p>Exemple d'utilisation:</p>
+                <pre><code>/* Style pour mobile */
+@media (max-width: 600px) {
+  /* Règles CSS */
+}
+
+/* Style pour tablette */
+@media (min-width: 601px) and (max-width: 768px) {
+  /* Règles CSS */
+}
+
+/* Style pour ordinateur */
+@media (min-width: 769px) {
+  /* Règles CSS */
+}</code></pre>
+            </div>
+            
+            <div>
+                <h2>4. Astuces pour bien commencer</h2>
+                <p>
+                    - Testez sur plusieurs appareils (ou utilisez les outils développeurs de Chrome).<br>
+                    - Pensez "Mobile First" : Commencez par le style mobile, puis ajoutez des règles pour les grands écrans.<br>
+                    - Utilisez des unités flexibles (%, vw, rem) plutôt que des pixels fixes (px).
+                </p>
+            </div>
+            
+            <div>
+                <h2>5. Exemple complet</h2>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Exemple Responsive&lt;/title&gt;
+  &lt;style&gt;
+    /* Style par défaut (Mobile First) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .box {
+      background-color: #4facfe;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    
+    /* Style pour tablettes (min 600px) */
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      
+      .box {
+        width: calc(50% - 10px);
+      }
+    }
+    
+    /* Style pour ordinateurs (min 992px) */
+    @media (min-width: 992px) {
+      .box {
+        width: calc(33.33% - 10px);
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="box"&gt;Boîte 1&lt;/div&gt;
+    &lt;div class="box"&gt;Boîte 2&lt;/div&gt;
+    &lt;div class="box"&gt;Boîte 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                
+                <p>
+                    <strong>Résultat :</strong><br>
+                    Mobile → Les boîtes sont empilées.<br>  
+                    Tablette → 2 boîtes par ligne.<br>  
+                    Ordinateur → 3 boîtes par ligne.
+                </p>
+            </div>
+            
+            <div>
+                <h2>En résumé</h2>
+                <p>
+                    Les Media Queries permettent d'adapter votre site à tous les écrans.<br>
+                    - Utilisez @media (max-width: ...) pour cibler les petits écrans.<br>
+                    - Testez sur plusieurs appareils avant de publier.<br><br>
+                    Maintenant, essayez d'ajouter un Media Query à votre site !
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Techno-World</h3>
+                <p>Apprenez les technologies web de manière simple et ludique.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Cours</a></li>
+                    <li><a href="#">Tutoriels</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: contact@techno-world.com</li>
+                    <li>Tél: +123 456 789</li>
+                    <li>Adresse: 123 Rue du Web, Paris</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Réseaux sociaux</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Techno-World. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu hamburger functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            n
