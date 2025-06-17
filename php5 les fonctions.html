@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fonction en PHP</title>
+    <link rel="stylesheet" href="./css/php5 les fonctions.css">
+</head>
+<body>
+    <header>
+        <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+            alt="Techno-World" class="logo">
+        <h1>
+            Techno-world 
+        </h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>
+                    Module 3 : Fonctions en PHP
+                </h1>
+                <p>
+                    Les fonctions sont des éléments fondamentaux en PHP qui permettent d'organiser et de réutiliser du code. Voici les concepts clés de ce module :
+                </p>
+            </div>
+            <div>
+                <h2>
+                    1. Déclaration de fonctions
+                </h2>
+                <pre>
+                    ```php
+function nomFonction($param1, $param2 = "valeur par défaut") {
+    // Corps de la fonction
+    return $resultat; // Optionnel
+}
+```
+                </pre>
+            </div>
+            <div>
+                <h2>
+                    2. Types de fonctions
+                </h2>
+                <p>
+                    Fonctions simples
+                </p>
+                <pre>
+                    ```php
+function saluer() {
+    echo "Bonjour !";
+}
+```
+                </pre>
+                <p>
+                    Fonctions avec paramètres
+                </p>
+                <pre>
+                    ```php
+function additionner($a, $b) {
+    return $a + $b;
+}
+```
+                </pre>
+                <p>
+                    Fonctions avec valeurs par défaut
+                </p>
+                <pre>
+                    ```php
+function direBonjour($nom = "invité") {
+    echo "Bonjour, $nom !";
+}
+```
+                </pre>
+            </div>
+            <div>
+                <h2>
+                    3. Retour de valeurs
+                </h2>
+                <p>
+                    - Utilisation du mot-clé `return`<br>
+- Une fonction peut retourner n'importe quel type de données<br>
+- Retourne `null` si aucun return n'est spécifié
+
+                </p>
+                </div>
+                <div>
+                    <h2>
+                        4. Portée des variables
+                    </h2>
+                <p>
+                   - Les variables déclarées dans une fonction sont "locales"
+- Pour accéder à une variable globale : 
+                </p>
+                <pre>
+                    ```php
+$globale = 10;
+
+function test() {
+    global $globale;
+    echo $globale;
+}
+```
+
+                </pre>
+            </div>
+            <div>
+                <h1>
+                    5. Fonctions variables
+                </h1>
+                <pre>
+                    ```php
+function maFonction() {
+    echo "Fonction appelée";
+}
+
+$fonction = "maFonction";
+$fonction(); // Appelle maFonction()
+```
+</pre>
+<h2>
+6. Fonctions anonymes (closures)
+</h2>
+<pre>
+```php
+$addition = function($a, $b) {
+    return $a + $b;
+};
+
+echo $addition(2, 3); // Affiche 5
+```
+</pre>              
+            </div>
+        </section>
+        <section>
+            <div>
+                <h1>
+                    . Typage des paramètres et retours (PHP 7+)
+                </h1>
+                <pre>
+                    ```php
+function calculerMoyenne(float ...$nombres): float {
+    return array_sum($nombres) / count($nombres);
+}
+```
+                </pre>
+            </div>
+            <div>
+                <h2>
+                    8. Fonctions récursives
+                </h2>
+                <pre>
+                    ```php
+function factorielle($n) {
+    if ($n <= 1) return 1;
+    return $n * factorielle($n - 1);
+}
+```
+                </pre>
+            </div>
+            <div>
+                <h3>
+                    Bonnes pratiques
+                </h3>
+                <ol>
+                    <li>Donner des noms explicites aux fonctions </li>
+                    <li>
+                       Limiter la taille des fonctions (une fonction = une tâche) 
+                    </li>
+                    <li>
+                        Documenter avec des commentaires PHPDoc
+                    </li>
+                    <li>
+                      Utiliser des paramètres avec des valeurs par défaut judicieusement  
+                    </li>
+                    <li>
+                        Éviter les effets de bord (modification de variables globales)
+                    </li>
+                </ol>
+            </div>
+            <div>
+                <h3>
+                    Fonctions utiles intégrées
+                </h3>
+                <p>
+                    PHP propose de nombreuses fonctions prédéfinies :
+                </p>
+                <ul>
+                    <li>`strlen()`, `substr()` pour les chaînes</li>
+                    <li>
+                        `count()` pour les tableaux
+                    </li>
+                    <li>
+                        `date()` pour les dates
+                    </li>
+                    <li>
+                        `file_get_contents()` pour la lecture de fichiers
+                    </li>
+                    <li>
+                        `json_encode()`/`json_decode()` pour le JSON
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button>
+                    <a href="./php6 tableau en PHP.html">suivante</a>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer>
+   
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Techno-World</h3>
+                <p>Apprenez les technologies web de manière simple et ludique.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../accueil/cours.html">Cours</a></li>
+                    <li><a href="../accueil/faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:credokutanga170@gmail"> email</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025
+             Techno-World. Tous droits réservés.</p>
+        </div>
+   
+</footer>
+</body>
+</html>

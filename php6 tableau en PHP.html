@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module en PHP</title>
+    <link rel="stylesheet" href="./css/php6 tableau en PHP.css">
+</head>
+<body>
+    <header>
+        <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+            alt="Techno-World" class="logo">
+        <h1>Techno-world</h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>Module 4 : Tableaux en PHP</h1>
+                <p>
+                    Les tableaux (arrays en anglais) sont des structures de données fondamentales en PHP qui permettent de stocker plusieurs valeurs dans une seule variable.
+                </p>
+            </div>
+            <div>
+                <h2>1. Les types de tableaux en PHP</h2>
+                <h3>a) Tableaux indexés:</h3>
+                <p>
+                    Les tableaux indexés utilisent des indices numériques (commençant à 0 par défaut).
+                </p>
+                <pre><code>$fruits = array("Pomme", "Banane", "Orange");
+// ou depuis PHP 5.4+
+$fruits = ["Pomme", "Banane", "Orange"];
+
+// Accès à un élément
+echo $fruits[1]; // Affiche "Banane"</code></pre>
+            </div>
+            <div>
+                <h3>b) Tableaux associatifs</h3>
+                <p>
+                   Les tableaux associatifs utilisent des clés nommées (chaînes de caractères).
+                </p>
+                <pre><code>$personne = array(
+    "nom" => "Dupont",
+    "prenom" => "Jean",
+    "age" => 30
+);
+// ou
+$personne = [
+    "nom" => "Dupont",
+    "prenom" => "Jean",
+    "age" => 30
+];
+
+echo $personne["prenom"]; // Affiche "Jean"</code></pre>
+            </div>
+            <div>
+                <h3>c) Tableaux multidimensionnels</h3>
+                <p>
+                    Ce sont des tableaux qui contiennent d'autres tableaux.
+                </p>
+                <pre><code>$etudiants = array(
+    array("nom" => "Martin", "notes" => [12, 15, 18]),
+    array("nom" => "Durand", "notes" => [10, 14, 16])
+);
+
+echo $etudiants[0]["nom"]; // Affiche "Martin"
+echo $etudiants[1]["notes"][2]; // Affiche 16</code></pre>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h2>2. Manipulation des tableaux</h2>
+                <h3>Fonctions utiles pour les tableaux</h3>
+                <p>- <strong>count()</strong> : Compter le nombre d'éléments</p>
+                <pre><code>echo count($fruits); // 3</code></pre>
+
+                <p>- <strong>array_push()</strong> / <strong>array_pop()</strong> : Ajouter/supprimer en fin de tableau</p>
+                <pre><code>array_push($fruits, "Kiwi");
+$dernier = array_pop($fruits);</code></pre>
+
+                <p>- <strong>array_merge()</strong> : Fusionner des tableaux</p>
+                <pre><code>$tableau1 = ["a", "b"];
+$tableau2 = ["c", "d"];
+$resultat = array_merge($tableau1, $tableau2);</code></pre>
+
+                <p>- <strong>sort()</strong>, <strong>rsort()</strong>, <strong>asort()</strong>, <strong>ksort()</strong> : Trier des tableaux</p>
+                <pre><code>sort($fruits); // tri par valeurs (index numérique)
+asort($personne); // tri par valeurs en gardant les clés
+ksort($personne); // tri par clés</code></pre>
+
+                <p>- <strong>array_key_exists()</strong> : Vérifier si une clé existe</p>
+                <pre><code>if (array_key_exists("age", $personne)) {
+    echo "La clé age existe";
+}</code></pre>
+
+                <p>- <strong>in_array()</strong> : Vérifier si une valeur existe</p>
+                <pre><code>if (in_array("Pomme", $fruits)) {
+    echo "Pomme existe dans le tableau";
+}</code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>3. Parcourir un tableau</h2>
+            <p>Avec for (pour les tableaux indexés)</p>
+            <pre><code>for ($i = 0; $i < count($fruits); $i++) {
+    echo $fruits[$i] . "<br>";
+}</code></pre>
+
+            <p>Avec foreach (pour tous les tableaux)</p>
+            <pre><code>foreach ($fruits as $fruit) {
+    echo $fruit . "<br>";
+}
+
+foreach ($personne as $cle => $valeur) {
+    echo "$cle : $valeur<br>";
+}</code></pre>
+            <div>
+                <h2>4. Tableaux et formulaires HTML</h2>
+                <p>
+                    PHP permet de récupérer des données de formulaires sous forme de tableaux :
+                </p>
+                <pre><code>&lt;form method="post">
+    &lt;input type="text" name="personne[nom]">
+    &lt;input type="text" name="personne[prenom]">
+    &lt;input type="submit">
+&lt;/form></code></pre>
+
+                <p>En PHP :</p>
+                <pre><code>$donnees = $_POST['personne'];
+echo $donnees['nom']; // Affiche la valeur du champ nom</code></pre>
+            </div>
+            <div>
+                <h2>5. Bonnes pratiques</h2>
+                <ol>
+                    <li>Utilisez des tableaux associatifs pour plus de clarté quand c'est possible</li>                            
+                    <li>Préférez la syntaxe courte `[]` à `array()` (depuis PHP 5.4)</li>
+                    <li>Utilisez `foreach` pour parcourir les tableaux associatifs</li>
+                    <li>Vérifiez toujours si une clé existe avant d'y accéder</li>
+                </ol>
+                <p>
+                    Les tableaux sont extrêmement puissants en PHP et constituent l'une des fonctionnalités les plus utilisées dans le langage.
+                </p>
+            </div>
+            <div>
+                <p>
+                    <button>
+                        <a href="./php7 formulaire en php.html"> Suivante</a>
+                    </button>
+                </p>
+                <p>
+                    <button>
+                        <a href="./php5 les fonctions.html">Retour</a>
+                    </button>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Techno-World</h3>
+                <p>Apprenez les technologies web de manière simple et ludique.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../">Accueil</a></li>
+                    <li><a href="#">Cours</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+           
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Techno-World. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

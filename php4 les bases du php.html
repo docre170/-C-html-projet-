@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Les bases du PHP</title>
+    <link rel="stylesheet" href="./css/php4 les bases du php.css">
+</head>
+<body>
+    <header>
+        <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+            alt="Techno-World" class="logo">
+
+        <h1>
+            Techno-world 
+        </h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>
+                    Module 2 : Bases du langage en PHP
+                </h1>
+                <p>
+                    Le Module 2 couvre les fondamentaux du langage PHP, essentiels pour commencer à développer des applications web. Voici les principales notions abordées :
+                </p>
+            </div>
+            <div>
+                <h2>
+                    1. Syntaxe de base
+                </h2>
+                <p>
+                    - Structure d'un script PHP : &lt;?php ... ?&gt; <br>
+- Instruction de fin : point-virgule (;)<br>
+- Commentaires : // pour une ligne, /* ... */ pour un bloc
+                </p>
+            </div>
+           <div>
+               <h2>
+                   2. Variables et types de données
+               </h2>
+               <p>
+                   - Déclaration : $nomVariable = valeur; <br>
+- Types principaux : <br>
+  - Chaînes (string) : $texte = "Bonjour";  <br>
+  - Entiers (int) : $nombre = 42;<br>
+  - Nombres à virgule (float) : $decimal = 3.14;<br>
+  - Booléens (bool) : $vrai = true;<br>
+  - Tableaux (array) : $liste = [1, 2, 3]; <br>
+  - NULL
+  
+               </p>
+           </div>
+           <div>
+               <h2>
+                   3. Opérateurs
+               </h2>
+               <p>
+                   - Arithmétiques : `+`, `-`, `*`, `/`, `%` (modulo) <br>
+- Comparaison : `==`, `===` (égalité stricte), `!=`, `!==`, `>`, `&gt;`, etc. <br>
+- Logiques : `&&` (et), `||` (ou), `!` (non)<br>
+- Concaténation de chaînes : `.`
+               </p>
+           </div>
+           <div>
+               <h2>
+                   4. Structures de contrôle
+               </h2>
+               <p>
+                   - Conditionnelles :
+               </p>
+               <pre>
+                   ```php
+  if (condition) {
+      // code
+  } elseif (autre_condition) {
+      // code
+  } else {
+      // code
+  }
+  ```
+<p>- Boucles :</p>
+  ```php
+  for ($i = 0; $i < 10; $i++) { /* code */ }
+  
+  while (condition) { /* code */ }
+  
+  do { /* code */ } while (condition);
+  
+  foreach ($tableau as $element) { /* code */ }
+  ```
+               </pre>
+           </div>
+           <div>
+               <h2>
+                   5. Fonctions
+               </h2>
+               <p>
+                   Définition :
+               </p>
+               <pre>
+                     ```php
+  function maFonction($param1, $param2) {
+      // code
+      return $resultat;
+  }
+  ```
+               </pre>
+               <p>
+                   - Appel : `maFonction($arg1, $arg2);`
+               </p>
+           </div>
+           <div>
+               <h2>
+                   6. Tableaux
+               </h2>
+               <p>
+                   - Indexés :
+               </p>
+               <pre>
+                   ```php
+  $fruits = ["pomme", "banane", "orange"];
+  echo $fruits[0]; // "pomme"
+  ```
+               </pre>
+               <p>
+                   - Associatifs :
+               </p>
+               <pre>
+                   ```php
+  $personne = [
+      "nom" => "kutanga",
+      "prenom" => "credo",
+      "age" => 25
+  ];
+  echo $personne["nom"]; // "kutanga"
+  ```
+               </pre>
+           </div>
+           <div>
+               <h2>
+                   7. Superglobales
+               </h2>
+               <p>
+                   Variables prédéfinies accessibles partout :
+                   <ul>
+                       <li>  - `$_GET` : paramètres URL</li>
+                       <li>
+                           - `$_POST` : données formulaire 
+                       </li>
+                       <li>
+                             - `$_SESSION` : variables de session
+                       </li>
+                       <li>
+                             - `$_COOKIE` : cookies
+                       </li>
+                       <li>
+                             - `$_SERVER` : informations serveur
+                       </li>
+                   </ul>
+               </p>
+           </div>
+           <div>
+               <h2>
+                   8. Traitement des formulaires
+               </h2>
+               <p>
+                   - Récupération des données :
+               </p>
+               <pre>
+                   ```php
+  $nom = $_POST['nom']; // pour un formulaire en POST
+  $recherche = $_GET['q']; // pour des paramètres URL
+  ```
+  
+               </pre>
+           </div>
+           <div>
+              <h2>Bonnes pratiques</h2> 
+              <p>
+                  - Validation des entrées utilisateur <br>
+- Protection contre les injections SQL <br>
+- Utilisation de `htmlspecialchars()` pour l'affichage
+              </p>
+           </div>
+        </section>
+        <section>
+            <button>
+                <a href="./php5 les fonctions.html">suivant</a>
+            </button>
+        </section>
+    </main>
+    <footer>
+   
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Techno-World</h3>
+                <p>Apprenez les technologies web de manière simple et ludique.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../accueil/cours.html">Cours</a></li>
+                    <li><a href="../accueil/faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025
+             Techno-World. Tous droits réservés.</p>
+        </div>
+   
+</footer>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire en PHP</title>
+    <link rel="stylesheet" href="./css/php7 formulaire en php.css">
+</head>
+<body>
+    <header>
+        <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+            alt="Techno-World" class="logo">
+        <h1>Techno-world</h1>
+    </header>
+    <main>
+        <section>
+            <h1>Module 5 : Formulaires et PHP</h1>
+            <p>
+                Les formulaires HTML sont essentiels pour permettre aux utilisateurs d'interagir avec votre application web. PHP permet de traiter facilement les données envoyées via ces formulaires.
+            </p>
+            
+            <div>
+                <h2>1. Création d'un formulaire HTML</h2>
+                <pre><code>&lt;form method="POST" action="traitement.php">
+    &lt;!-- Champs du formulaire ici --&gt;
+    &lt;input type="submit" value="Envoyer">
+&lt;/form></code></pre>
+                <p>
+                    - <strong>method</strong> : <code>GET</code> (visible dans l'URL) ou <code>POST</code> (envoyé dans le corps de la requête)<br>
+                    - <strong>action</strong> : Fichier PHP qui traitera les données.
+                </p>
+            </div>
+            
+            <div>
+                <h3>Types de champs courants</h3>
+                <pre><code>&lt;input type="text" name="nom" placeholder="Votre nom">
+&lt;input type="email" name="email" required>
+&lt;input type="password" name="mdp">
+&lt;input type="number" name="age" min="18" max="99">
+&lt;input type="checkbox" name="newsletter" checked>
+&lt;select name="pays">
+    &lt;option value="fr">France&lt;/option>
+    &lt;option value="be">Belgique&lt;/option>
+&lt;/select>
+&lt;textarea name="message">&lt;/textarea></code></pre>
+            </div>
+            
+            <div>
+                <h2>2. Récupération des données en PHP</h2>
+                
+                <h3>Données POST</h3>
+                <pre><code>$nom = $_POST['nom'];
+$email = $_POST['email'];</code></pre>
+                
+                <h3>Données GET</h3>
+                <pre><code>$recherche = $_GET['q']; // Pour une URL comme recherche.php?q=terme</code></pre>
+                
+                <h3>Sécurisation des données</h3>
+                <pre><code>// Toujours valider et filtrer les entrées :
+$nom = htmlspecialchars($_POST['nom']); // Échappe les caractères HTML
+$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+$age = filter_var($_POST['age'], FILTER_VALIDATE_INT, [
+    'options' => ['min_range' => 18, 'max_range' => 99]
+]);</code></pre>
+            </div>
+            
+            <div>
+                <h2>3. Validation des formulaires</h2>
+                
+                <h3>Validation côté serveur</h3>
+                <pre><code>$erreurs = [];
+
+if (empty($_POST['nom'])) {
+    $erreurs[] = "Le nom est obligatoire";
+}
+
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    $erreurs[] = "Email invalide";
+}
+
+if (count($erreurs) > 0) {
+    // Afficher les erreurs
+} else {
+    // Traitement des données
+}</code></pre>
+                
+                <h3>Affichage des erreurs</h3>
+                <pre><code>&lt;?php if (!empty($erreurs)): ?>
+    &lt;div class="error">
+        &lt;ul>
+            &lt;?php foreach ($erreurs as $erreur): ?>
+                &lt;li>&lt;?= $erreur ?>&lt;/li>
+            &lt;?php endforeach ?>
+        &lt;/ul>
+    &lt;/div>
+&lt;?php endif ?></code></pre>
+            </div>
+            
+            <div>
+                <h2>4. Envoi de fichiers</h2>
+                
+                <h3>Formulaire d'upload</h3>
+                <pre><code>&lt;form method="POST" enctype="multipart/form-data">
+    &lt;input type="file" name="fichier">
+    &lt;input type="submit" name="envoyer">
+&lt;/form></code></pre>
+                
+                <h3>Traitement en PHP</h3>
+                <pre><code>if (isset($_FILES['fichier'])) {
+    $dossierCible = "uploads/";
+    $fichierCible = $dossierCible . basename($_FILES['fichier']['name']);
+    $typeFichier = strtolower(pathinfo($fichierCible, PATHINFO_EXTENSION));
+    
+    // Vérifications
+    $tailleMax = 500000; // 500KB
+    $autorises = ['jpg', 'png', 'pdf'];
+    
+    if ($_FILES['fichier']['size'] > $tailleMax) {
+        $erreurs[] = "Fichier trop volumineux";
+    }
+    
+    if (!in_array($typeFichier, $autorises)) {
+        $erreurs[] = "Type de fichier non autorisé";
+    }
+    
+    if (empty($erreurs)) {
+        if (move_uploaded_file($_FILES['fichier']['tmp_name'], $fichierCible)) {
+            echo "Fichier uploadé avec succès";
+        } else {
+            echo "Erreur lors de l'upload";
+        }
+    }
+}</code></pre>
+            </div>
+            
+            <div>
+                <h2>5. Bonnes pratiques</h2>
+                <ol>
+                    <li><strong>Toujours valider côté serveur</strong> : La validation JS côté client peut être contournée</li>
+                    <li><strong>Protection contre les attaques</strong> :
+                        <ul>
+                            <li>XSS : <code>htmlspecialchars()</code></li>
+                            <li>CSRF : Tokens de session</li>
+                            <li>Injection SQL : Requêtes préparées</li>
+                        </ul>
+                    </li>
+                    <li><strong>Feedback utilisateur</strong> : Afficher les erreurs et confirmer les succès</li>
+                    <li><strong>Sécurité fichiers</strong> :
+                        <ul>
+                            <li>Limiter les types</li>
+                            <li>Renommer les fichiers uploadés</li>
+                            <li>Stocker hors de la racine web si possible</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>Exemple complet</h3>
+                
+                <h4>formulaire.php</h4>
+                <pre><code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;title>Contact&lt;/title>
+    &lt;style>
+        .error { color: red; }
+        .success { color: green; }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;h1>Nous contacter&lt;/h1>
+    
+    &lt;?php if (!empty($succes)): ?>
+        &lt;div class="success">&lt;?= $succes ?>&lt;/div>
+    &lt;?php endif ?>
+    
+    &lt;form method="POST">
+        &lt;div>
+            &lt;label>Nom*:&lt;/label>
+            &lt;input type="text" name="nom" value="&lt;?= htmlspecialchars($_POST['nom'] ?? '') ?>">
+            &lt;?php if (!empty($erreurs['nom'])): ?>
+                &lt;span class="error">&lt;?= $erreurs['nom'] ?>&lt;/span>
+            &lt;?php endif ?>
+        &lt;/div>
+        
+        &lt;div>
+            &lt;label>Email*:&lt;/label>
+            &lt;input type="email" name="email" value="&lt;?= htmlspecialchars($_POST['email'] ?? '') ?>">
+            &lt;?php if (!empty($erreurs['email'])): ?>
+                &lt;span class="error">&lt;?= $erreurs['email'] ?>&lt;/span>
+            &lt;?php endif ?>
+        &lt;/div>
+        
+        &lt;div>
+            &lt;label>Message*:&lt;/label>
+            &lt;textarea name="message">&lt;?= htmlspecialchars($_POST['message'] ?? '') ?>&lt;/textarea>
+            &lt;?php if (!empty($erreurs['message'])): ?>
+                &lt;span class="error">&lt;?= $erreurs['message'] ?>&lt;/span>
+            &lt;?php endif ?>
+        &lt;/div>
+        
+        &lt;button type="submit">Envoyer&lt;/button>
+    &lt;/form>
+&lt;/body>
+&lt;/html></code></pre>
+                
+                <h4>traitement.php</h4>
+                <pre><code>&lt;?php
+$erreurs = [];
+$succes = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validation
+    if (empty($_POST['nom'])) {
+        $erreurs['nom'] = "Le nom est obligatoire";
+    }
+    
+    if (empty($_POST['email'])) {
+        $erreurs['email'] = "L'email est obligatoire";
+    } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $erreurs['email'] = "Email invalide";
+    }
+    
+    if (empty($_POST['message'])) {
+        $erreurs['message'] = "Le message est obligatoire";
+    } elseif (strlen($_POST['message']) < 10) {
+        $erreurs['message'] = "Le message doit faire au moins 10 caractères";
+    }
+    
+    // Si pas d'erreurs
+    if (empty($erreurs)) {
+        // Traitement des données (envoi email, sauvegarde BDD...)
+        $succes = "Merci pour votre message!";
+        
+        // Réinitialisation du formulaire
+        $_POST = [];
+    }
+}
+
+// Inclure le formulaire
+include 'formulaire.php';</code></pre>
+            </div>
+            <div>
+                <h2>6. Conclusion</h2>
+                <p>
+                    Les formulaires sont un élément clé de toute application web. En utilisant PHP pour traiter les données, vous pouvez créer des expériences utilisateur interactives et sécurisées.
+                    N'oubliez pas de toujours valider et sécuriser les entrées utilisateur pour éviter les problèmes de sécurité.
+                </p>
+            </div>
+            <div>
+                <p>
+                    <button><a href="./php8 fichier .html">Page suivante</a></button>
+                </p>
+                <p>
+                    <button><a href="./php6 tableau en PHP.html">Retour</a></button>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Techno-World</h3>
+                <p>Apprenez les technologies web de manière simple et ludique.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../accueil/cours.html">Cours</a></li>
+                    <li><a href="../accueil/faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+2431996048"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Techno-World. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

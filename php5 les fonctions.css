@@ -1,0 +1,219 @@
+        /* Reset et base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #f0f0f0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: #0f2027;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-top: 0.5rem;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        section {
+            background-color: rgba(15, 32, 39, 0.7);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid #2c5364;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #4facfe;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #203a43;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            color: #00f2fe;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #4facfe;
+        }
+
+        p,
+        li {
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+        }
+
+        /* Code blocks */
+        pre {
+            background-color: #1e2d3b;
+            border-left: 4px solid #4facfe;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border-radius: 0 4px 4px 0;
+            color: #f8f8f8;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00f2fe;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        ul li::marker {
+            color: #4facfe;
+        }
+
+        ol li::marker {
+            color: #00f2fe;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2027;
+            color: white;
+            padding: 2rem 1rem;
+            border-top: 1px solid #2c5364;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            padding: 0 1rem;
+        }
+
+        .footer-column h3 {
+            color: #00f2fe;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-column a {
+            color: #4facfe;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #00f2fe;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #2c5364;
+            color: #8a9ba8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+
+            ul,
+            ol {
+                padding-left: 1.5rem;
+            }
+        }

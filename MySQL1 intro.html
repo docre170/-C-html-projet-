@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL intro</title>
+    <style>
+        /* Reset et base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 0.5rem;
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        section > div {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        section > div:last-child {
+            border-bottom: none;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #4facfe;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00f2fe;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Button */
+        button {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+        }
+
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        address {
+            font-style: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="" alt="">
+        <h1>
+            Techno-world 
+        </h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>
+                    Module 1 : Introduction à MySQL
+                </h1>
+                <h2>
+                    1. Qu'est-ce que MySQL ?
+                </h2>
+                <p>
+                    MySQL est un système de gestion de bases de données relationnelles (SGBDR) open-source. Il permet de :  <br>
+- stocker des données de manière organisée.  <br>
+- Manipuler ces données (ajout, modification, suppression).  <br>
+- Interroger les données avec le langage SQL (Structured Query Language).  
+                </p>
+            </div>
+            <div>
+                <h2>
+                    2. Pourquoi utiliser MySQL ?
+                </h2>
+                <p>
+                    - Gratuit et Open Source : Disponible sous licence GPL.
+                    <br>  
+- Performant : Optimisé pour les applications web et les grosses charges.  <br>
+- Sécurisé : Gestion des utilisateurs et des permissions.  <br>
+- Multiplateforme : Fonctionne sur Windows, Linux, macOS.  <br>
+- Compatible avec de nombreux langages (PHP, Python, Java, etc.).  
+                </p>
+            </div>
+            <div>
+                <h2>
+                    3. Outils pour utiliser MySQL
+                </h2>
+                <p>
+                    - MySQL Workbench (Interface graphique).  <br>
+- phpMyAdmin (Gestion via navigateur web).  <br>
+- Ligne de commande (Terminal MySQL).  
+                </p>
+            </div>
+            <div>
+                <h2>
+                    Conclusion
+                </h2>
+                <p>
+                    MySQL est un SGBDR puissant et largement utilisé pour stocker et gérer des données structurées. La maîtrise des bases (tables, requêtes SQL) est essentielle pour développer des applications web ou logicielles.  
+                </p>
+            </div>
+            <div>
+                <button>
+                    <a href="./MySQL 2 .html">Prochaine étape</a>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <address>
+            Contactez-nous à <a href="mailto:contact@techno-world.com" style="color: white;">contact@techno-world.com</a>
+        </address>
+        <p>&copy; 2025 Techno-World. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

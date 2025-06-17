@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des fichiers en PHP</title>
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to right, #ff00cc, #333399);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* En-tête */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, #ddd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+        
+        /* Contenu principal */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Sections */
+        h1 {
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Listes */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Blocs de code */
+        pre {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Consolas', monospace;
+            border-left: 5px solid #ff00cc;
+            font-size: 1rem;
+            line-height: 1.6;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        
+        pre::before {
+            content: "PHP";
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+        
+        /* Message de transition */
+        .transition {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 40px 0 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Pied de page */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            main {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            pre {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .transition {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            main {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            pre {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+            
+            .transition {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="" alt="">
+        <h1>Techno-world</h1>
+    </header>
+    <main>
+        <div>
+            <div>
+                <h1>1. Ouvrir un fichier – `fopen()`</h1>
+                <p>
+                    - Sert à ouvrir un fichier pour lire ou écrire.
+                </p>
+                <p>
+                    Syntaxe :<br>
+                    `fopen("nom_du_fichier.txt", "mode");`
+                </p>
+                <p>
+                    Exemples de modes :
+                </p>
+                <ul>
+                    <li>`"r"` : lecture seule</li>
+                    <li>`"w"` : écriture seule (efface le contenu si le fichier existe)</li>
+                    <li>`"a"` : écriture en ajoutant à la fin</li>
+                    <li>`"r+"` : lecture et écriture</li>
+                </ul>
+                <pre>
+```php
+$fichier = fopen("test.txt", "w");
+```</pre>
+            </div>
+            <div>
+                <h1>2. Écrire dans un fichier – `fwrite()`</h1>
+                <p>
+                    - Sert à écrire du texte dans un fichier ouvert en mode écriture.
+                </p>
+                <pre>
+```php
+fwrite($fichier, "Bonjour le monde !");
+fclose($fichier);
+```</pre>
+            </div>
+            <div>
+                <h1>3. Lire un fichier – `fread()`</h1>
+                <p>
+                    - Sert à lire le contenu d'un fichier.
+                </p>
+                <pre>
+```php
+$fichier = fopen("test.txt", "r");
+$contenu = fread($fichier, filesize("test.txt"));
+fclose($fichier);
+echo $contenu;
+```</pre>
+            </div>
+            <div>
+                <h1>4. Télécharger un fichier avec PHP</h1>
+                <pre>
+```php
+header('Content-Type: application/octet-stream');
+header('Content-Disposition: attachment; filename="fichier.txt"');
+readfile("chemin/fichier.txt");
+exit;
+```</pre>
+                <div class="transition">
+                    Maintenant passons à l'introduction à MySQL avec PHP
+                </div>
+            </div>
+            <div>
+                <p>
+                    <button>
+                        <a href="./MySQL1 intro.html">Suivante</a>
+                    </button>
+                </p>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        &copy;2025 // Techno-world #php
+    </footer>
+</body>
+</html>
