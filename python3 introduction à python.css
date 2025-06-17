@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #f6d365;
+    --secondary-color: #fda085;
+    --text-color: #333;
+    --light-color: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--light-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h1,
+h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #e74c3c;
+}
+
+p,
+li {
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: 15px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+span,
+strong {
+    color: #e74c3c;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: var(--border-radius);
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: var(--light-color);
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,221 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #ff00cc, #333399);
+    color: #fff;
+    line-height: 1.7;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #ddd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenu principal */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sections */
+h1 {
+    font-size: 2rem;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Blocs de code */
+pre {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 20px 0;
+    font-family: 'Consolas', monospace;
+    border-left: 5px solid #ff00cc;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Citations */
+blockquote {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ff00cc;
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Bouton */
+button {
+    background: linear-gradient(45deg, #ff00cc, #9933ff);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 30px 0 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(153, 51, 255, 0.4);
+    font-weight: 600;
+    width: 100%;
+    max-width: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(153, 51, 255, 0.6);
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Message de félicitations */
+.congrats {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: pulse 2s infinite;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    pre {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .congrats {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    pre {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .congrats {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}

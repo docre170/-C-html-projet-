@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les fonctions en Python</title>
+    <link rel="stylesheet" href="./css python/python6 fonctions.css">
+</head>
+<body>
+    <header>
+        <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+            alt="Techno-World" class="logo" width="300px" height="auto">
+        <h1>Techno-world</h1>
+    </header>
+    <main>
+        <div>
+            <div>
+                <h1>Fonction</h1>
+                <p>On utilise `def` pour créer une fonction.</p>
+                <pre>```python
+def saluer():
+    print("Bonjour!")
+```</pre>
+                <p>Appel de la fonction: `saluer()`</p>            
+            </div>
+            <div>
+                <h1>2. Paramètres</h1>
+                <p>On peut passer des valeurs à une fonction via les paramètres :</p>
+                <pre>```python
+def bonjour(nom):
+    print("Salut, " + nom)
+
+bonjour("Alice")
+```</pre>
+                <p>3. Valeur de retour avec `return`*<br>
+                Une fonction peut *renvoyer* une valeur:</p>
+                <pre>```python
+def addition(a, b):
+    return a + b
+
+résultat = addition(3, 5)
+print(résultat)  # Affiche 8
+```</pre>
+            </div> 
+            <div>
+                <h1>4. Portée des variables</h1>
+                <p>Il y a 2 types de portée: <br>
+                - *Locale*: la variable est accessible _seulement dans la fonction_.<br>
+                - *Globale*: la variable est accessible _partout_ dans le programme.</p>
+                <pre>```python
+x = 10  # variable globale
+
+def test():
+    x = 5  # variable locale (différente)
+    print(x)
+
+test()       # Affiche 5
+print(x)     # Affiche 10
+```</pre>
+                <p>Surtout n'oubliez pas la pratique est mère des sciences</p>
+            </div>   
+        </div>
+        <div class="button-container">
+            <button>
+                <a href="./python5 structure.html">← Retour</a>
+            </button>
+            <button>
+                <a href="./python7 structure de données.html">Suivant →</a>
+            </button>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 // Techno-world #python
+        <div>
+            <p>Contact: <a href="mailto:credokutanga170@gmail">
+            </a>
+            </p>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <a href="../index.html">accueil</a>
+                </li>
+                <li>
+                    <a href="../accueil/a propos .html">A propos</a>
+                </li>
+                <li>
+                    <a href="../codage de donnes/codage de données 1.html">Codage de données</a>
+                </li>
+                <li>
+                    <a href="../developpement web/généralité_frontend.html">Dévéloppement web</a>
+                </li>
+                <li>
+                    <a href="../fondement du web/technologie pour tous acc2.html"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #f4f8fb;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: royalblue;
+    color: #fff;
+    padding: 32px 0 18px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(65, 105, 225, 0.08);
+}
+button {
+    background-color: #2d6cdf;
+    color: white;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: #4f8cff;
+    padding: 8px;
+    transform: translateX(+23px);
+}
+
+button a {
+    text-decoration: none;
+
+}
+
+button a:hover {
+    text-decoration: wavy;
+    color: #f0f0f0;
+}
+a {
+    color: #4f8cff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+a:hover {
+    background: #4f8cff;
+    color: #fff;
+}
+h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    text-shadow: 1px 1px 3px #2222;
+    text-align: center;
+}
+
+main {
+    max-width: 700px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(65, 105, 225, 0.07);
+    padding: 32px 36px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+h2 {
+    color: royalblue;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 22px;
+    margin-bottom: 18px;
+}
+
+pre {
+    background: #222;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 1.1rem;
+}
+
+.conseil {
+    background: #e3f0ff;
+    border-left: 4px solid royalblue;
+    padding: 10px 18px;
+    border-radius: 6px;
+    margin: 16px 0;
+}
+
+.python {
+    color: #e74c3c;
+    font-style: italic;
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    padding: 16px 0;
+    background: royalblue;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0 0 12px 12px;
+    margin-top: 24px;
+    box-shadow: 0 -2px 8px rgba(65, 105, 225, 0.07);
+}
+main:hover{
+    padding: 10px;
+}
+/* Responsive Design */
+@media (max-width: 900px) {
+    main {
+        max-width: 98%;
+        padding: 18px 8px;
+    }
+
+    header {
+        padding: 18px 0 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 8px 2vw;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.05rem;
+    }
+
+    pre {
+        font-size: 1rem;
+        padding: 8px 6px;
+    }
+
+    section {
+        margin-bottom: 18px;
+    }
+        footer {
+            font-size: 0.95rem;
+            padding: 10px 0;
+            border-radius: 0 0 8px 8px;
+        }
+}

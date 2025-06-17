@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure et contrôle en Python</title>
+    <link rel="stylesheet" href="./css python/python5 structure.css">
+</head>
+<body>
+    <header>
+        <img src="C:\html projet\photo\file_000000009b2461f7845f59f51edef343_conversation_id=6801d0a1-ee4c-8009-a575-a82ca18f77f0&message_id=8d84b211-d521-42cf-b651-c6dc334850ca (1).png"
+            alt="Techno-World" class="logo" width="500px" height="auto">
+        <h1>Techno-world</h1>
+    </header>
+    <main>
+        <div>
+            <div>
+                <h1>1. Conditions (`if`, `elif`, `else`)</h1>
+                <p>Les conditions permettent d'exécuter un bloc de code <strong>uniquement</strong> si une condition est vraie.</p>
+                <pre>```python
+âge = 18
+
+if âge >= 18:
+    print("Adulte")
+elif âge >= 13:
+    print("Adolescent")
+else:
+    print("Enfant")
+```</pre>
+            </div>
+            <div>
+                <h1>2. Boucles (`for` et `while`)</h1>
+                <p>Les boucles permettent de <i>répéter</i> un bloc de code plusieurs fois.</p>
+                <p><i>`for`: Parcourt une séquence</i></p>
+                <pre>```python
+for i in range(5):  # De 0 à 4
+    print(i)
+```</pre>
+                <p>`while`: Répète tant que la condition est vraie</p>
+                <pre>```python
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+```</pre>
+            </div>
+            <div>
+                <h1>3. Instrumentation (`break` et `continue`)</h1>
+                <p>Ces mots-clés permettent de <b>contrôler l'exécution</b> des boucles.</p>
+                <p>`break`: Arrête la boucle immédiatement</p>
+                <pre>```python
+for i in range(10):
+    if i == 5:
+        break  # Sort de la boucle
+    print(i)
+```</pre>
+                <p><i>continue</i>: Passe à l'itération suivante sans exécuter le reste du bloc</p>
+                <pre>```python
+for i in range(5):
+    if i == 2:
+        continue  # Ignore le 2
+    print(i)
+```</pre>
+            </div>
+            <div>
+                <p>
+                    <button>
+                        <a href="./python6 fonctions.html">Suite du cours →</a>
+                    </button>
+                </p>
+                <p>
+                    <button>
+                        <a href="./python4 bases du langage.html">Retour</a>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy;2025 // Techno-world #python
+    </footer>
+</body>
+</html>

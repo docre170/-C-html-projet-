@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+h2 {
+    margin: 20px 0 15px;
+    color: #f8f8f8
+}
+
+h1 {
+    font-size: 1.8rem
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-left: 4px solid #4ca1af;
+    padding-left: 10px
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem
+}
+
+b {
+    color: #4ca1af;
+    font-weight: 600
+}
+
+pre {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 15px 0;
+    font-family: 'Consolas', monospace;
+    border-left: 3px solid #4ca1af
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+@media (max-width:768px) {
+    header h1 {
+        font-size: 2rem
+    }
+
+    main {
+        padding: 20px
+    }
+
+    h1 {
+        font-size: 1.5rem
+    }
+
+    h2 {
+        font-size: 1.3rem
+    }
+
+    p,
+    pre {
+        font-size: 1rem
+    }
+}
+
+@media (max-width:480px) {
+    body {
+        padding: 10px
+    }
+
+    header h1 {
+        font-size: 1.7rem
+    }
+
+    main {
+        padding: 15px
+    }
+
+    pre {
+        padding: 10px;
+        font-size: 0.9rem
+    }
+}
