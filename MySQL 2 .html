@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL - Techno-World</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #00f260, #0575e6);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        main div {
+            margin-bottom: 2rem;
+        }
+
+        h1, h2 {
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 1rem 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            h1, h2 {
+                text-align: center;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://via.placeholder.com/80" alt="Logo Techno-World">
+        <h1>Techno-World</h1>
+    </header>
+    <main>
+        <div>
+            <h1>Module 2 : Bases de données et tables</h1>
+            <h2>1. Qu’est-ce qu’une base de données ?</h2>
+            <p>
+                Une base de données (BDD) est un ensemble organisé de données stockées et accessibles électroniquement. Elle permet de : <br>
+                - Stocker des informations de manière structurée.  <br>
+                - Manipuler (ajouter, modifier, supprimer) ces données. <br> 
+                - Rechercher efficacement des informations.
+            </p>
+        </div>
+        <div>
+            <h2>2. Qu’est-ce qu’une table ?</h2>
+            <p>
+                Une <strong>table</strong> est une structure principale dans une base de données, organisée en <strong>lignes (enregistrements)</strong> et <strong>colonnes (champs)</strong>. <br>
+                - <strong>Colonne (Champ)</strong> : Représente un type de donnée (ex: <code>Nom</code>, <code>Âge</code>, <code>Email</code>).<br>
+                - <strong>Ligne (Enregistrement)</strong> : Une entrée complète dans la table (ex: <code>"Jean", 25, "jean@exemple.com"</code>).
+            </p>
+        </div>
+        <div>
+            <h2>3. Clé primaire (Primary Key - PK)</h2>
+            <p>
+                - <strong>Définition</strong> : Une colonne (ou un ensemble de colonnes) qui identifie <strong>de manière unique</strong> chaque ligne. <br>
+                - <strong>Exemple</strong> : Un <code>ID</code> unique pour chaque utilisateur.
+            </p>
+        </div>
+        <div>
+            <h2>4. Types de données courants dans une table</h2>
+            <p>
+                - <code>INT</code> : Nombre entier (ex: âge).<br>
+                - <code>VARCHAR</code> : Texte de longueur variable (ex: nom, email).<br>
+                - <code>DATE</code> : Date (ex: date de naissance).<br>
+                - <code>BOOLEAN</code> : Vrai/Faux (ex: actif/inactif).
+            </p>
+        </div>
+        <div>
+            <h2>En résumé</h2>
+            <p>
+                - Une <strong>base de données</strong> stocke des données de manière organisée.<br>
+                - Une <strong>table</strong> est une structure avec des lignes et colonnes.<br>
+                - La <strong>clé primaire</strong> assure l'unicité des enregistrements.<br>
+                - Les <strong>relations</strong> permettent de lier plusieurs tables.<br>
+                - Les opérations <strong>CRUD</strong> permettent de manipuler les données.
+            </p>
+        </div>
+        <div>
+            <p>
+                <button>
+                    <a href="../accueil/cours.html">Cours</a>
+                </button>
+            </p>
+        </div>
+    </main>
+    <footer id="contact">
+        <address>
+            Contactez-nous à <a href="mailto:contact@techno-world.com">contact@techno-world.com</a>
+        </address>
+        <p>&copy; 2025 Techno-World. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
